@@ -1,7 +1,7 @@
-#TD N°1 d'informatique
+# TD N°1 d'informatique
 
-##sommaire du cours 
-*  un super titre de sommaire
+## sommaire du cours 
+* un super titre de sommaire
 
 [lien vers la doc de java ](https://docs.oracle.com/en/java/) 
 
