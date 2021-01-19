@@ -6,6 +6,7 @@ public class Droite {
         p1 = ptemp1;
         p2 = ptemp2;
     }
+
     public boolean parallele(Droite d){
         Vecteur v1 = new Vecteur(this.p1,this.p2);
         Vecteur v2 = new Vecteur(d.p1,d.p2);

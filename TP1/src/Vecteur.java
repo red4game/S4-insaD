@@ -14,17 +14,19 @@ public class Vecteur {
     public double produitScalaire(Vecteur v){
         return (this.dx*v.dx +this.dy*dy);
     }
+
     public double determinant(Vecteur v){
         return (this.dx*v.dy - v.dx*this.dy);
     }
+
     public boolean parallele(Vecteur v){
-        if ((this.dx/v.dx) == (this.dy/v.dy)){
+        if (determinant(v)==0){
             return true;
         }
         return false;
     }
     public boolean orthogonal(Vecteur v){
-        if (this.determinant(v) == 0){
+        if (this.produitScalaire(v) == 0){
             return true;
         }
         return false;
