@@ -81,5 +81,5 @@ public class circle {
 ***
 ### Exercice polygone
 ```java
-//on a un texte sur le cours à l'endroits de diapos, on pourrait
+//on a un texte sur le cours à l'endroits de diapos, on pourrait recopier mais ça serait débile
 ```
