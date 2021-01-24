@@ -1,3 +1,9 @@
+/**
+ Classe de test des classes java
+
+ @author Caisson Mathis - Groupe D
+ @version 1.0
+ */
 public class TP1 {
     public static void main(String[] args) {
         Point p1 = new Point(10, 10);
