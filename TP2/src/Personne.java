@@ -5,32 +5,51 @@
  @version 16.0128
  */
 public class Personne {
+	Mot nom;
+	Mot prenom;
+	int tel;
 
-
-	// CONSTRUCTEUR A PROGRAMMER
-	public Personne(String s, String dusse) {
-
+	public Personne(String prenom, String nom) {
+		this.prenom= new Mot(prenom);
+		this.nom = new Mot(nom);
 	}
 
 	/** Associe le numero de telephone. */
 	public void setTel(int tel) {
-		// A PROGRAMMER
+		this.tel=tel;
 	}
 
 	/** Fournit le numero de telephone. */
 	public int getTel() {
-		return 112; // A PROGRAMMER
+		return this.tel;
 	}
 	
-	/** Teste l'égalite du nom et du prenom */
-	// A PROGRAMMER
+	/** Teste l'égalite du nom et du prenom sous méthode polymorphe*/
 
+
+	@Override
+	public boolean equals(Object o) {
+		if(o instanceof Personne) {
+			Personne p = (Personne) o;
+			return (this.prenom.equals(p.prenom) && this.nom.equals(p.nom));
+		}
+		return false;
+	}
+
+	public boolean estAvant(Personne p){
+		if (!(this.nom.equals(p.nom))){
+			return this.nom.compare(p.nom);
+		} else if (!(this.prenom.equals(p.prenom))){
+			return this.prenom.compare(p.prenom);
+		}
+		return false;
+	}
 	/**
      Produit une chaine indiquant la personne. 
      (Par exemple Jules CESAR)
 	 */
 	public String toString() {
-		return "X XXXXXXX"; // A PROGRAMMER
+		return ("nom:"+this.nom+" prenom:"+this.prenom);
 	}
 
 	/**
