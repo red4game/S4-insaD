@@ -4,23 +4,17 @@
  @author Departement informatique
  @version 16.0128
  */
-public class EnsembleTrieP {
-    protected static final int CAPACITE_INITIALE = 0;
-    protected int cardinal = CAPACITE_INITIALE;
-    protected Personne[] elements;
+public class EnsembleTrieP extends EnsembleP {
 
     /**
      * Constructor with no parameter
      */
     public EnsembleTrieP() {
-        this.elements = new Personne[this.cardinal];
+        super();
     }
 
     public EnsembleTrieP(EnsembleTrieP other) {
-        this.cardinal = other.cardinal;
-        this.elements = new Personne[this.cardinal];
-        for (int i = 0; i < this.cardinal; i++)
-            this.elements[i] = new Personne(other.elements[i].nom.toString(),other.elements[i].prenom.toString());
+        super(other);
     }
 
     /**
@@ -133,56 +127,6 @@ public class EnsembleTrieP {
         this.cardinal--;
     }
 
-    /**
-     * Intersection de deux ensembles de personnes
-     *
-     * @param other Un autre ensemble de personnes
-     * @return Un nouvel ensemble de personnes contenant toutes les personnes contenues dans l'ensemble appelé et l'ensemble fourni
-     */
-    public EnsembleTrieP inter(EnsembleTrieP other) {
-        // This is done fairly inefficiently
-        Personne[] ntab; // Fill it in later
-        EnsembleTrieP res = new EnsembleTrieP();
-
-        for (int i = 0; i < this.cardinal; i++) {
-            if (other.contient(this.elements[i]))
-                res.ajouter(this.elements[i]);
-        }
-
-        return res;
-    }
-
-    /**
-     * Union de deux ensembles de personnes
-     *
-     * @param other Un autre ensemble de personnes
-     * @return Un nouvel ensemble de personnes contenant toutes les personnes contenues dans l'ensemble appelé ou dans l'ensemble fourni
-     */
-    public EnsembleTrieP union(EnsembleTrieP other) {
-        EnsembleTrieP res = new EnsembleTrieP(other);
-        System.out.println(res + "|" + other);
-        for (int i = 0; i < this.cardinal; i++) {
-            System.out.println("ADDING " +this.elements[i]);
-            res.ajouter(this.elements[i]);
-            System.out.println(res);
-        }
-        return res;
-    }
-
-    /**
-     * Représentation textuelle d'un ensemble de personnes
-     *
-     * @return Une chaîne de caractères représentant l'ensemble
-     */
-    public String toString() {
-        if (this.cardinal == 0)
-            return "{}";
-
-        String res = "{";
-        for (int i = 0; i < this.cardinal; i++)
-            res += this.elements[i] + ", ";
-        return res + "\b\b}";
-    }
     /**
      * Le main
      *
