@@ -98,7 +98,7 @@ public class Point {
    * @return point milieu des 2 points, courant et passé en paramètre
    */
   public Point milieu(Point Y){
-    Point p_temp = new Point((this.x +Y.x)/2,(this.y +Y.y)/2);
+    Point p_temp = barycentre(1,1,Y);
     return(p_temp);
   }
 
