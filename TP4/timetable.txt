@@ -1,0 +1,15 @@
+Room,205,24
+Room,105,20
+Room,237,52
+Course,007,Spying,James B.
+Course,42,Big Bang Theory,S. Cooper
+Course,1337,Advanced Programming,Dr. Java
+Course,51,Sport,Ph. Lucas
+Lesson,8,42,205
+Lesson,9,666,14
+Lesson,15,1337,237
+Lesson,9,1337,237
+Lesson,10,42,1664
+Lesson,8,51,205
+Lesson,8,1337,205
+Lesson,8,007,205
