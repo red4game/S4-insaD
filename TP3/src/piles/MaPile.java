@@ -61,10 +61,9 @@ public class MaPile implements Pile {
     }
 
     public static void main(String[] var0) {
-        SimplePile var1 = new SimplePile();
+        MaPile var1 = new MaPile();
         var1.empiler(1);
-        System.out.println(var1);
-        var1.empiler(2);
+        System.out.println(var1);        var1.empiler(2);
         System.out.println(var1);
         var1.empiler(3);
         System.out.println(var1);

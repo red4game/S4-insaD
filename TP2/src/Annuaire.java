@@ -1,4 +1,4 @@
-public class Annuaire extends EnsembleP {
+public class Annuaire extends EnsembleTrieP {
 
     public Annuaire(){
         super();

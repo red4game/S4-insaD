@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Crash/Crash.iml" filepath="$PROJECT_DIR$/Crash/Crash.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/S4-insaD.iml" filepath="$PROJECT_DIR$/.idea/S4-insaD.iml" />
       <module fileurl="file://$PROJECT_DIR$/TD1/TD1.iml" filepath="$PROJECT_DIR$/TD1/TD1.iml" />
       <module fileurl="file://$PROJECT_DIR$/TP1/TP1.iml" filepath="$PROJECT_DIR$/TP1/TP1.iml" />

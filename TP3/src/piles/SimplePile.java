@@ -1,4 +1,3 @@
-//
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by FernFlower decompiler)
 //
@@ -56,12 +55,11 @@ public class SimplePile implements Pile {
 
     public static void main(String[] var0) {
         SimplePile var1 = new SimplePile();
-        var1.empiler(new Integer(1));
+        var1.empiler(1);
         System.out.println(var1);
-        var1.empiler(new Integer(2));
+        var1.empiler(2);
         System.out.println(var1);
-        var1.empiler(new Integer(3));
+        var1.empiler(3);
         System.out.println(var1);
     }
 }
-
