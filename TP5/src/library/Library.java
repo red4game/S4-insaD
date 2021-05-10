@@ -18,11 +18,14 @@ public class Library {
      */
     private Map<Integer,Document> documents;
 
+    private Map<String,ArrayList<Document>> documentsByAuthor;
+
     /**
      * Constructor
      */
     public Library(){
         documents = new HashMap<Integer,Document>();
+        documentsByAuthor = new HashMap<String,ArrayList<Document>>();
     }
 
     /**
@@ -30,8 +33,9 @@ public class Library {
      */
     public Library(Collection<Document> c){
         documents = new HashMap<Integer,Document>();
+        documentsByAuthor = new HashMap<String,ArrayList<Document>>();
         for (Document d:c){
-            documents.put(d.getBarCode(),d);
+            add(d);
         }
     }
 
@@ -49,12 +53,27 @@ public class Library {
     public String toString(){
         return documents.toString();
     }
+
+    public String toString(Comparator<Document> c){
+        List<Document> l = new ArrayList<Document>(documents.values());
+        l.sort(c);
+        return l.toString();
+    }
+
+
+
     /**
      * Add a document to the library
      * @param doc the document to add
      */
     public void add(Document doc){
         documents.put(doc.getBarCode(),doc);
+        for (String author : doc.getAuthors()) {
+            if (!documentsByAuthor.containsKey(author))
+                documentsByAuthor.put(author, new ArrayList<Document>());
+            if (!documentsByAuthor.get(author).contains(doc))
+                documentsByAuthor.get(author).add(doc);
+        }
     }
 
     /**
@@ -67,7 +86,6 @@ public class Library {
         Document mydoc = documents.get(barCode);
         if (mydoc != null) {
             mydoc.setAvailable(false);
-
         }
         return mydoc;
     }
@@ -83,5 +101,13 @@ public class Library {
         if (mydoc != null){
             mydoc.setAvailable(true);
         }
+    }
+
+    public ArrayList<Document> getDocumentByAuthor(String author){
+        if (!(documentsByAuthor.containsKey(author))) {
+            return new ArrayList<Document>();
+        }
+        return documentsByAuthor.get(author);
+        //TODO : ajouter des tests junits
     }
 }

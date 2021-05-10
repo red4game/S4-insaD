@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+			fx:controller="tp.controleur.UIControleur">
+	<top>
+		<ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+			<Label text="Équation :"/>
+			<TextField fx:id="eqField" onAction="#onEquationChanged">
+				<tooltip><Tooltip text="L'équation de la fonction à afficher." /></tooltip>
+			</TextField>
+			<Label text="Nombre de points :"/>
+			<TextField fx:id="nbField" onAction="#onNbPtsEquationChanged" prefWidth="50"></TextField>
+			
+			<Label text="Borne Min X :"/>
+			<TextField fx:id="minFieldX" onAction="#SetBorneMinX" prefWidth="50"></TextField>
+			<Label text="Borne Max X :"/>
+			<TextField fx:id="maxFieldX" onAction="#SetBorneMaxX" prefWidth="50"></TextField>
+
+			<Label text="PolarCheckBox :"/>
+			<CheckBox fx:id="polarBox" onAction="#onPolarBox"></CheckBox>
+		</ToolBar>
+	</top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+          <Tab text="Pie">
+              <PieChart fx:id="pie" />
+            </Tab>
+		  <Tab text="Second Tab">
+			  <ScatterChart fx:id="curve" legendVisible="false">
+				  <xAxis><NumberAxis autoRanging="false" label="MySuperX" lowerBound="-50" upperBound="50"></NumberAxis></xAxis>
+				  <yAxis><NumberAxis autoRanging="false" label="MySuperY" lowerBound="-50" upperBound="50"></NumberAxis></yAxis>
+			  </ScatterChart>
+
+		  </Tab>
+      </TabPane>
+   </center>
+</BorderPane>

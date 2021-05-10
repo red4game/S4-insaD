@@ -1,0 +1,4 @@
+Data 1;20
+Data 2;40
+Data 3;15
+Data 4;25
