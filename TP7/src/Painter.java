@@ -120,7 +120,7 @@ public class Painter {
 		p.randforme.trieFacettes();
 
 		applet.clear();// efface la fenetre
-		p.randdrawShape(applet); // dessine la forme
+		p.drawShape(applet); // dessine la forme
 
 	}
 

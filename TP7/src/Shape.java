@@ -233,17 +233,25 @@ public class Shape {
 		int i=0,j=0,k=0;
 		while (i<left && j<right){
 			if (l[i].estAvant(r[j])){
-				a[k++] = l[i++];
+				a[k] = l[i];
+				k++;
+				i++;
 			}
 			else{
-				a[k++] = r[j++];
+				a[k] = r[j];
+				k++;
+				j++;
 			}
 		}
 		while (i<left){
-			a[k++] = l[i++];
+			a[k] = l[i];
+			k++;
+			i++;
 		}
 		while (j<left){
-			a[k++] = r[j++];
+			a[k] = r[j];
+			k++;
+			j++;
 		}
 	}
 	public static void mergesort(Facette[] a,int n) {

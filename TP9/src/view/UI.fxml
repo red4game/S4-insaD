@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.8431, 0.9951" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="794.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.Controler">
+  <items>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="807.0" prefWidth="956.0">
+         <children>
+            <Canvas fx:id="drawingArea" height="743.0" layoutX="2.0" layoutY="2.0" width="949.0" AnchorPane.bottomAnchor="62.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+            <GridPane layoutX="371.0" layoutY="745.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label layoutX="281.0" layoutY="609.0" prefHeight="39.0" prefWidth="98.0" text="Score">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="score" alignment="CENTER" editable="false" focusTraversable="false" layoutX="394.0" layoutY="613.0" prefHeight="39.0" prefWidth="106.0" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+         </children></AnchorPane>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="107.0" prefWidth="911.0">
+         <children>
+            <HBox layoutX="77.0" layoutY="8.0" prefHeight="91.0" prefWidth="845.0" spacing="100.0">
+               <children>
+                  <GridPane prefHeight="112.0" prefWidth="179.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="88.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="62.0" minWidth="10.0" prefWidth="47.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onGenerate" prefHeight="25.0" prefWidth="82.0" text="Generate" />
+                        <Group GridPane.columnIndex="1" />
+                        <Group GridPane.columnIndex="1">
+                           <children>
+                              <Label layoutX="208.0" layoutY="56.0" text="Size:" textAlignment="RIGHT" />
+                              <TextField fx:id="size" alignment="CENTER_RIGHT" layoutX="242.0" layoutY="51.0" onAction="#onSize" prefHeight="25.0" prefWidth="67.0" text="20" />
+                           </children>
+                        </Group>
+                     </children>
+                  </GridPane>
+                  <GridPane prefHeight="120.0" prefWidth="398.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="90.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="162.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onSolve" text="Solve with" />
+                        <RadioButton id="dfs" mnemonicParsing="false" onAction="#onDfs" selected="true" text="DFS" GridPane.columnIndex="1">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="search" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton id="bfs" mnemonicParsing="false" onAction="#onBfs" text="BFS" toggleGroup="$search" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <RadioButton id="dijkstra" mnemonicParsing="false" onAction="#onDijkstra" text="Dijkstra" toggleGroup="$search" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Group GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <children>
+                              <TextField fx:id="cost" alignment="CENTER_RIGHT" layoutX="478.0" layoutY="384.0" onAction="#onCost" prefHeight="25.0" prefWidth="61.0" text="50" />
+                              <Label layoutX="350.0" layoutY="389.0" prefHeight="15.0" prefWidth="134.0" text="Breaking wall cost:" />
+                           </children>
+                        </Group>
+                     </children>
+                  </GridPane>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onReset" text="Reset" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Group />
+  </items>
+</SplitPane>
